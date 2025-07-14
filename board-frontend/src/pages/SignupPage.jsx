@@ -1,15 +1,11 @@
+import { Container } from '@mui/material'
+import Signup from '../components/auth/Signup'
+
 function SignupPage() {
    return (
-      <div>
-         <p>아이디</p>
-         <input type="text" />
-         <p>이름</p>
-         <input type="text" />
-         <p>비밀번호</p>
-         <input type="text" />
-         <p>비밀번호 확인</p>
-         <input type="text" />
-      </div>
+      <Container maxWidth="md">
+         <Signup />
+      </Container>
    )
 }
 
