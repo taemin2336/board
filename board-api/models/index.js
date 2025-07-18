@@ -3,8 +3,9 @@ const dotenv = require('dotenv')
 // .env에서 현재 실행환경(development, test, production 중 하나)을 가져옴
 const env = process.env.NODE_ENV || 'development'
 
-const Board = require('./member')
-const Member = require('./board')
+const Board = require('./board')
+const User = require('./user')
+const Comment = require('./comment')
 
 // 가져온 실행환경에 맞는 db 설정을 가져옴
 const config = require('../config/config.json')[env]
@@ -19,15 +20,18 @@ db.sequelize = sequelize
 
 //User 모델과 Comment 모델을 db 객체에 추가
 db.Board = Board
-db.Member = Member
+db.User = User
+db.Comment = Comment
 
 //모델을 초기화하고 데이터베이스와 연결
 Board.init(sequelize)
-Member.init(sequelize)
+User.init(sequelize)
+Comment.init(sequelize)
 
 //모델간의 관계 설정(예-외래키, 연관 테이블 등)
 Board.associate(db)
-Member.associate(db)
+User.associate(db)
+Comment.associate(db)
 
 //db객체를 모듈로 내보냄
 module.exports = db

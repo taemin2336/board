@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 function Signup() {
    const [email, setEmail] = useState('') // 이메일
-   const [nick, setNick] = useState('') // 닉네임
+   const [name, setName] = useState('') // 닉네임
    const [password, setPassword] = useState('') // 패스워드
    const [confirmPassword, setConfirmPassword] = useState('') // 패스워드 확인
    const [isSignupComplete, setIsSignupComplete] = useState(false) // 회원가입 완료 여부
@@ -28,7 +28,7 @@ function Signup() {
    // 회원가입 버튼 클릭시 실행
    const handleSignup = () => {
       // 모든 필드를 입력했는지 확인
-      if (!email.trim() || !nick.trim() || !password.trim() || !confirmPassword.trim()) {
+      if (!email.trim() || !name.trim() || !password.trim() || !confirmPassword.trim()) {
          alert('모든 필드를 입력해주세요!')
          return
       }
@@ -39,7 +39,7 @@ function Signup() {
          return
       }
 
-      dispatch(registerUserThunk({ email, nick, password }))
+      dispatch(registerUserThunk({ email, name, password }))
          .unwrap()
          .then(() => {
             // 회원가입 성공시
@@ -89,7 +89,7 @@ function Signup() {
 
          <TextField label="이메일" variant="outlined" fullWidth margin="normal" value={email} onChange={(e) => setEmail(e.target.value)} />
 
-         <TextField label="사용자 이름" variant="outlined" fullWidth margin="normal" value={nick} onChange={(e) => setNick(e.target.value)} />
+         <TextField label="사용자 이름" variant="outlined" fullWidth margin="normal" value={name} onChange={(e) => setName(e.target.value)} />
 
          <TextField label="비밀번호" variant="outlined" type="password" fullWidth margin="normal" value={password} onChange={(e) => setPassword(e.target.value)} />
 
