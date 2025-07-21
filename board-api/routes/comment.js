@@ -5,6 +5,12 @@ const Comment = require('../models/comment')
 // 댓글 등록
 router.post('/', async (req, res, next) => {
    try {
+      console.log(req.body)
+      console.log(123123)
+      // const board = await Comment.create({
+      //    content: req.body.comment,
+      //    board_id: req.body.id,
+      // })
       const { comment, board_id, user_id } = req.body
       const newComment = await Comment.create({
          content: comment,

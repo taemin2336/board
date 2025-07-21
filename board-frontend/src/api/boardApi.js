@@ -128,7 +128,7 @@ export const deleteBoard = async (id) => {
 // 댓글 등록하기
 export const createComment = async (data) => {
    try {
-      const response = await boardApi.post(`/comment`, data)
+      const response = await boardApi.post(`/comment/createComment`, data)
       return response
    } catch (error) {
       console.error(`API Request 오류 : ${error}`)

@@ -4,6 +4,7 @@ import { boardComment } from '../api/boardApi'
 // 댓글 등록
 export const createCommentThunk = createAsyncThunk('comments/createComment', async (commentData, { rejectWithValue }) => {
    try {
+      console.log(commentData)
       const response = await createComment(commentData)
       return response.data
    } catch (error) {
