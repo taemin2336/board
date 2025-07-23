@@ -38,6 +38,7 @@ app.use(
       credentials: true, // 쿠키, 세션 등 인증 정보 허용
    })
 )
+
 app.use(morgan('dev')) // 로그
 app.use(express.static(path.join(__dirname, 'uploads'))) // 정적 파일 제공
 app.use(express.json()) // JSON 데이터 파싱

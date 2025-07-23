@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { boardComment } from '../api/boardApi'
+import { createComment, boardComment } from '../api/boardApi'
 
 // 댓글 등록
 export const createCommentThunk = createAsyncThunk('comments/createComment', async (commentData, { rejectWithValue }) => {

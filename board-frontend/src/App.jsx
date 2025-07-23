@@ -33,7 +33,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/boards/create" element={<BoardCreatePage />} />
             <Route path="/boards/edit/:id" element={<EditPage />} />
-            <Route path="/boards/detail/:id" element={<BoardDetailPage isAuthenticated={isAuthenticated} user={user} />} />
+            <Route path="/boards/detail/:id" element={<BoardDetailPage isAuthenticated={isAuthenticated} user={user} key={location.key} />} />
          </Routes>
       </>
    )
